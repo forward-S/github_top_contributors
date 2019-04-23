@@ -62,7 +62,18 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 //        cell.delegate = self
         
         let contributor = top_contributers[(indexPath as NSIndexPath).row]
-        cell.avartar.image = UIImage(named: (contributor["avatar_url"])! as! String)
+//        cell.avartar.image = UIImage(named: "https://avatars0.githubusercontent.com/u/16700?v=4")
+        if let url = URL(string: "\(contributor["avatar_url"] as! String)")
+        {
+            DispatchQueue.global().async {
+                if let data = try? Data( contentsOf:url)
+                {
+                    DispatchQueue.main.async {
+                        cell.avartar.image = UIImage( data:data)
+                    }
+                }
+            }
+        }
         cell.user_name.text = "\(contributor["login"] as! String)"
         cell.commits.text = "\(contributor["contributions"] as! Int)"
         return cell

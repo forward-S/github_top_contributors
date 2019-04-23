@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserCell" rowHeight="100" id="XiA-SQ-Hv8" customClass="UserCell" customModule="Top_contributors" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContributorCell" rowHeight="100" id="XiA-SQ-Hv8" customClass="ContributorCell" customModule="Top_contributors" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XiA-SQ-Hv8" id="BX5-71-RGh">
@@ -52,7 +52,7 @@
                                                     <rect key="frame" x="364" y="35" width="30" height="30"/>
                                                     <state key="normal" title="map"/>
                                                     <connections>
-                                                        <action selector="didTapToMapBtn:" destination="XiA-SQ-Hv8" eventType="touchUpInside" id="8LO-KX-4Vy"/>
+                                                        <action selector="didTapToMapBtn:" destination="XiA-SQ-Hv8" eventType="touchUpInside" id="JaQ-9W-tc7"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -68,9 +68,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="avartar" destination="22P-YS-sPx" id="tIZ-8s-4j2"/>
-                                            <outlet property="commits" destination="NxJ-Wj-VV4" id="rq7-Sn-jfA"/>
-                                            <outlet property="user_name" destination="CZF-gn-GeX" id="j0i-Su-MNO"/>
+                                            <outlet property="avartar" destination="22P-YS-sPx" id="k7a-c4-Ngs"/>
+                                            <outlet property="commits" destination="NxJ-Wj-VV4" id="yHj-Q8-V6p"/>
+                                            <outlet property="name" destination="CZF-gn-GeX" id="Pgy-T2-EUa"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -86,11 +86,77 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="contributer_table" destination="KQZ-QR-CsQ" id="bNb-8t-DvS"/>
+                        <outlet property="contributor_table" destination="KQZ-QR-CsQ" id="lkO-Yd-fS5"/>
+                        <segue destination="znn-YI-9Sl" kind="presentation" identifier="mapSegue" id="SgV-JH-CtS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-229" y="-29"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="MEy-8u-vL1">
+            <objects>
+                <viewController id="znn-YI-9Sl" customClass="MapViewController" customModule="Top_contributors" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Sre-6p-dz1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contributor :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wL9-ql-fUK">
+                                <rect key="frame" x="50" y="149" width="97" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdC-QM-24C">
+                                <rect key="frame" x="172" y="149.5" width="42.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nav-iJ-Mvb">
+                                <rect key="frame" x="72.5" y="220" width="74.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQ8-Fv-9gf">
+                                <rect key="frame" x="172" y="220" width="40.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qid-cJ-IuZ">
+                                <rect key="frame" x="350" y="44" width="39" height="30"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="closeMap:" destination="znn-YI-9Sl" eventType="touchUpInside" id="hk8-xR-paW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Nyj-eH-fDj" firstAttribute="top" secondItem="wL9-ql-fUK" secondAttribute="top" constant="-105" id="0Zv-CE-aKs"/>
+                            <constraint firstItem="PQ8-Fv-9gf" firstAttribute="leading" secondItem="gdC-QM-24C" secondAttribute="leading" id="CjU-3H-0c9"/>
+                            <constraint firstItem="Nav-iJ-Mvb" firstAttribute="top" secondItem="wL9-ql-fUK" secondAttribute="bottom" constant="50" id="FnY-0P-KIt"/>
+                            <constraint firstItem="gdC-QM-24C" firstAttribute="centerY" secondItem="wL9-ql-fUK" secondAttribute="centerY" id="NFE-PV-B8e"/>
+                            <constraint firstItem="Qid-cJ-IuZ" firstAttribute="trailing" secondItem="Nyj-eH-fDj" secondAttribute="trailing" constant="-25" id="UhD-GH-3nA"/>
+                            <constraint firstItem="PQ8-Fv-9gf" firstAttribute="centerY" secondItem="Nav-iJ-Mvb" secondAttribute="centerY" id="fRc-Og-4Wv"/>
+                            <constraint firstItem="gdC-QM-24C" firstAttribute="leading" secondItem="wL9-ql-fUK" secondAttribute="trailing" constant="25" id="oRG-xM-8W5"/>
+                            <constraint firstItem="Nav-iJ-Mvb" firstAttribute="trailing" secondItem="wL9-ql-fUK" secondAttribute="trailing" id="tFA-aT-t1I"/>
+                            <constraint firstItem="Nyj-eH-fDj" firstAttribute="top" secondItem="Qid-cJ-IuZ" secondAttribute="top" id="tRR-ln-wfc"/>
+                            <constraint firstItem="Nyj-eH-fDj" firstAttribute="leading" secondItem="wL9-ql-fUK" secondAttribute="leading" constant="-50" id="y3V-lj-APb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Nyj-eH-fDj"/>
+                    </view>
+                    <connections>
+                        <outlet property="contributorNameLabel" destination="gdC-QM-24C" id="vb1-7E-0oa"/>
+                        <outlet property="locationLabel" destination="PQ8-Fv-9gf" id="jTl-Ri-VUI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yZc-Mz-igj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="876.81159420289862" y="13.392857142857142"/>
         </scene>
     </scenes>
 </document>

@@ -13,7 +13,8 @@
 		B32A366E226F45F000432632 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B32A366C226F45F000432632 /* Main.storyboard */; };
 		B32A3670226F461000432632 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B32A366F226F461000432632 /* Assets.xcassets */; };
 		B32A3673226F461000432632 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B32A3671226F461000432632 /* LaunchScreen.storyboard */; };
-		B32A367C226F56BF00432632 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32A367B226F56BF00432632 /* UserCell.swift */; };
+		B32A367C226F56BF00432632 /* ContributorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32A367B226F56BF00432632 /* ContributorCell.swift */; };
+		B32A367E226F72ED00432632 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32A367D226F72ED00432632 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +27,8 @@
 		B32A366F226F461000432632 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B32A3672226F461000432632 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B32A3674226F461000432632 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B32A367B226F56BF00432632 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		B32A367B226F56BF00432632 /* ContributorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributorCell.swift; sourceTree = "<group>"; };
+		B32A367D226F72ED00432632 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		EA38050B1B58D9430F70A9B1 /* Pods-Top_contributors.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Top_contributors.debug.xcconfig"; path = "Target Support Files/Pods-Top_contributors/Pods-Top_contributors.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +81,7 @@
 				B32A366F226F461000432632 /* Assets.xcassets */,
 				B32A3671226F461000432632 /* LaunchScreen.storyboard */,
 				B32A3674226F461000432632 /* Info.plist */,
+				B32A367D226F72ED00432632 /* MapViewController.swift */,
 			);
 			path = Top_contributors;
 			sourceTree = "<group>";
@@ -86,7 +89,7 @@
 		B32A367A226F569800432632 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B32A367B226F56BF00432632 /* UserCell.swift */,
+				B32A367B226F56BF00432632 /* ContributorCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -221,7 +224,8 @@
 			files = (
 				B32A366B226F45F000432632 /* ViewController.swift in Sources */,
 				B32A3669226F45F000432632 /* AppDelegate.swift in Sources */,
-				B32A367C226F56BF00432632 /* UserCell.swift in Sources */,
+				B32A367C226F56BF00432632 /* ContributorCell.swift in Sources */,
+				B32A367E226F72ED00432632 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

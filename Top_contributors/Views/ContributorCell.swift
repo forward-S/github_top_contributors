@@ -1,5 +1,5 @@
 //
-//  UserCell.swift
+//  ContributorCell.swift
 //  Top_contributors
 //
 //  Created by Leo on 4/23/19.
@@ -7,16 +7,16 @@
 //
 
 import UIKit
-protocol UserCellDelegate {
-    func didTapToMapBtn(tag: Int)
+protocol ContributorCellDelegate {
+    func didTapToMapBtn(contributor_name: String)
 }
 
-class UserCell: UITableViewCell {
+class ContributorCell: UITableViewCell {
     
-    var delegate: UserCellDelegate?
+    var delegate: ContributorCellDelegate?
     
     @IBOutlet weak var avartar: UIImageView!
-    @IBOutlet weak var user_name: UILabel!
+    @IBOutlet weak var name: UILabel!
     @IBOutlet weak var commits: UILabel!
     
     override func awakeFromNib() {
@@ -31,7 +31,7 @@ class UserCell: UITableViewCell {
     }
     
     @IBAction func didTapToMapBtn(_ sender: UIButton) {
-        delegate?.didTapToMapBtn(tag: self.tag)
+        delegate?.didTapToMapBtn(contributor_name: name.text!)
     }
     
 }
